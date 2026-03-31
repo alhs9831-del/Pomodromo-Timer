@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Pomodoro Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="app-body" style="background-image: url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2000&auto=format&fit=crop');">
+
+    <div class="overlay"></div>
+
+    <div class="container glassmorphism">
+        
+        <header class="toolbar">
+            <h2>FocusTimer</h2>
+            <div class="toolbar-actions">
+                <button id="btn-settings" class="icon-btn">⚙️ Settings</button>
+                <button id="btn-background" class="icon-btn">🖼️ Theme</button>
+            </div>
+        </header>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
+            <button class="mode-btn" data-mode="shortBreak">Short Break</button>
+            <button class="mode-btn" data-mode="longBreak">Long Break</button>
+        </div>
+
+        <div class="timer-display" id="time-left">
+            25:00
+        </div>
+
+        <div class="controls">
+            <button id="btn-start-pause" class="primary-btn">Start</button>
+            <button id="btn-reset" class="secondary-btn">Reset</button>
+    </div>
+    
+    <button id="btn-fullscreen" class="icon-btn fullscreen-btn">⛶</button>
+
+    <div id="modal-settings" class="modal hidden">
+        <div class="modal-content glassmorphism">
+            <h3>Custom Times (minutes)</h3>
+            <div class="input-group">
+                <label>Pomodoro</label>
+                <input type="number" id="input-pomodoro" value="25" min="1">
+            </div>
+            <div class="input-group">
+                <label>Short Break</label>
+                <input type="number" id="input-short" value="5" min="1">
+            </div>
+            <div class="input-group">
+                <label>Long Break</label>
+                <input type="number" id="input-long" value="15" min="1">
+            </div>
+            <button id="btn-save-settings" class="primary-btn small" style="margin-top: 1rem;">Save</button>
+            <button id="btn-close-settings" class="secondary-btn small">Close</button>
+        </div>
+    </div>
+
+    <div id="modal-background" class="modal hidden">
+        <div class="modal-content glassmorphism">
+            <h3>Choose Background</h3>
+            <div class="preset-backgrounds" id="preset-backgrounds">
+            </div>
+            <div class="input-group custom-bg-group">
+                <label>Or paste image URL:</label>
+                <input type="text" id="input-custom-bg" placeholder="https://...">
+            </div>
+            <div class="input-group custom-bg-group" style="margin-top: 0.5rem;">
+                <label>Or choose local photo:</label>
+                <input type="file" id="input-local-bg" accept="image/*" style="border: none; padding: 0.2rem 0; background: transparent;">
+            </div>
+            <button id="btn-apply-bg" class="primary-btn small" style="margin-top: 1rem;">Apply</button>
+            <button id="btn-close-bg" class="secondary-btn small">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
