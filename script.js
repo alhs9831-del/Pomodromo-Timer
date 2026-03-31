@@ -35,7 +35,7 @@ const presetBackgrounds = [
     'custom-photos/IMG_5612.JPG'
 ];
 let customBackgrounds = JSON.parse(localStorage.getItem('customBackgrounds')) || [];
-let currentBgUrl = presetBackgrounds[0];
+let currentBgUrl = 'custom-photos/IMG_5573.JPG';
 
 const timeDisplay = document.getElementById('time-left');
 const btnStartPause = document.getElementById('btn-start-pause');
